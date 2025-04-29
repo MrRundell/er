@@ -1,0 +1,12 @@
+{
+    "appName": "Electoral Roll",
+    "strapline": "This could be your parish",
+    "credits": "created by Simon Rundell for CodeMonkey Ltd 2025 - All rights reserved",
+    "api": "http://localhost",
+    "dateFormat": "dd/MM/YYYY",
+    "logo": "codemonkey.svg",
+    "churchName": "S. Elsewhere's, Plymouth",
+    "url": "https://localhost:5173",
+    "passwordEmailBody": "<p><img src='**url**/**logo**' alt='' width='145' /></p><h1>**churchName**</h1><p>Dear **UserName**,</p><p>This email is to provide you with an initial login and password to the Parish Electoral Roll database which can be found online at <a href='**url**'>**url**</a>&nbsp;</p><p>Your login is: <strong>**email**</strong></p><p>Your password is <strong>**password**</strong></p><p>You are strongly advised to change this password as soon as you can.</p><p>Use of the database is subject to GDPR and the Diocesan Guidelines. No unauthorised access is permitted. Do not share your access with anyone.</p><p>Yours</p><p><strong>Electoral Roll Management System</strong> (Automated Email)</p>"
+
+}

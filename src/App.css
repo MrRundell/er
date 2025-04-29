@@ -1,0 +1,715 @@
+/***************************************
+ER CSS File
+Simon Rundell
+CodeMonkey April 2025
+****************************************/
+
+/***************************************
+CORE HTML ELEMENTS
+****************************************/
+#root {
+  max-width: 1280px;
+  padding: 2rem;
+  text-align: left;
+  font-family:Arial, Helvetica, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1{
+  font-size: 2rem;
+  color: #333;
+}
+
+a:hover {
+  color: red;
+  font-weight:bold;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: top;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button {
+  border-radius: 8px;
+  border: 3px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: white;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  z-index: 1001; 
+}
+
+button:hover {
+  background-color: #555; 
+  color: #fff; 
+  border-radius: 4px
+}
+
+button:focus,
+button:focus-visible {
+  outline: none; 
+  background-color: #777; 
+}
+
+label {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #000000;
+
+}
+
+
+
+select {
+  padding: 0.5em;
+  margin: 10px;
+  font-size: 0.8em;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 8px;
+  border: 3px solid transparent;
+  color: black;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+select:hover {
+  border-radius: 4px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"] {
+  width: 200px;
+  padding: 0.5em;
+  margin: 10px;
+  font-size: 0.8em;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 8px;
+  border: 1px solid #888;
+  color: black;
+  cursor: pointer;
+}
+
+/***************************************
+CONTAINERS
+****************************************/
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+  margin-top: 15px;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  color: black;
+
+}
+
+.header img {
+  width: 100px;
+  height: 100px;
+  animation: spin 5s linear infinite;
+}
+
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-around;
+  border:#1a1a1a 1px solid;
+  border-radius: 8px;
+  padding: 5px;
+  gap: 20px;
+  width: 80%;
+  max-width: 1100px;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  z-index: 99;
+}
+
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  z-index: 99;
+  gap: 1em;
+}
+
+.admin-switch {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.address-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000000;
+  width: 30%;
+  margin-top: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.switches-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #000000;
+  width: 60%;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin-bottom: 1rem;
+}
+
+.reports-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000000;
+  width: 90%;
+  margin-top: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+
+/***************************************
+TOP MENU
+****************************************/
+
+.menubar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4); 
+  padding: 0.5rem 1rem;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 1000; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); 
+}
+
+.menubar button {
+  background-color: transparent; 
+  color: white; 
+  border: none; 
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menubar button:hover {
+  background-color: #3d3d3d; 
+  color: #fff; 
+  border-radius: 4px; 
+}
+
+.menubar button:focus {
+  outline: none; 
+  background-color: #777; 
+}
+
+.logo {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  animation: spin 5s linear infinite;
+}
+
+
+
+/***************************************
+LOADING AND TITLE ANIMATIONS
+****************************************/
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 56px;
+  height: 56px;
+  border: 16px solid #ccc;
+  border-top: 16px solid #888;
+  border-radius: 50%;
+  animation: loading 3s linear infinite;
+}
+
+.inplace-spinner {
+  display: flex;
+  height: 25px; 
+  width: 25px; 
+  z-index: 1000;
+  border: 8px solid #ccc;
+  border-top: 8px solid #888;
+  border-radius: 50%;
+  animation: loading 3s linear infinite; 
+}
+
+@keyframes loading {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/***************************************
+MINOR TWEAKS
+****************************************/
+
+.small {
+  font-size: 0.6em;
+  font-weight: 300;
+  color: #000000;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.left-gap {
+  margin-left: 1rem;
+}
+
+.top-gap {
+  margin-top: 1rem;
+}
+
+.button-small {
+  width: 100px;
+}
+
+
+.red {
+  color: red;
+}
+
+th.red {
+  background-color: rgb(207, 206, 206);
+}
+
+.green {
+  color: green;
+}
+
+.medium-switch{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.two-inputs{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  /* border: 1px solid #ff0000; */
+}
+
+.switches {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.switch{
+  width: 100px;
+  margin-bottom: 5px;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.small-label {
+  font-size: 0.8em;
+  font-weight: 800;
+  color: #333;
+}
+
+.v-small {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: white;
+}
+
+.biglabel {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #000000;
+  width: 100px;
+}
+
+.dob {
+  width: 150px;
+}
+
+/***************************************
+TABLES
+****************************************/
+
+table {
+  width: auto; 
+  font-size: 14px; 
+  text-align: center; 
+  margin: 0 auto; 
+}
+
+th, td {
+  padding: 6px 8px; 
+  border: 1px solid #ccc; 
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f7f7f7; 
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fff; 
+}
+
+th {
+  background-color: #444; 
+  color: #fff; 
+}
+
+tbody tr:hover {
+  background-color: #eaeaea;
+}
+
+thead {
+  background-color: #333;
+  color: white;
+}
+
+thead th {
+  background-color: #333;
+  color: white;
+}
+
+tbody tr td {
+  border: 1px solid #ddd;
+}
+
+.smallpad {
+  display: flex;
+  flex-direction: row;
+  padding: 2px;
+}
+
+/***************************************
+MODAL
+****************************************/
+.modal {
+  display: block; 
+  position: fixed; 
+  z-index: 10000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+  position:absolute;
+  top: 20%;
+  left: 10px;
+  background-color: #fefefe;
+  margin: 3% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%; 
+  max-width: 1200px; 
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  font-weight: 400;
+  font-size: 1em;
+  font-style: normal;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.modal-content ul li {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-content ul li:last-child {
+  border-bottom: none;
+}
+
+.date-picker {
+  position: relative;
+  z-index: 9999;
+}
+
+/***************************************
+LOGIN
+****************************************/
+
+.login-container {
+  position:absolute;
+  margin: 0 auto;
+  left: 15vw;
+  width: 20vw;
+  margin-top: 20px;
+  min-width: 320px;
+  max-width: 600px;
+  z-index: 99;
+}
+
+.password-reminder {
+  position: relative;
+  font-size: 12px;
+  color: #ccc;
+  top: -15px;
+}
+
+.login-header {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align:center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-button {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 1rem;
+}
+
+/* Responsive Design for Mobile and Tablet */
+
+/* For devices with a max width of 768px (tablets and smaller) */
+@media (max-width: 768px) {
+  #root {
+    padding: 1em;
+  }
+
+  .App {
+    padding: 0;
+    gap: 1rem;
+    width: 300px;
+  }
+
+input[type="text"],
+input[type="number"] {
+  width: 125px;
+  padding: 0.5em;
+  margin: 10px;
+  font-size: 0.8em;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 8px;
+  border: 1px solid #888;
+  color: black;
+  cursor: pointer;
+}
+
+input[type="password"],
+input[type="email"] {
+  width: 250px;
+}
+
+.admin-switch {
+  gap: 0.5rem;
+}
+
+  .menubar {
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    flex-wrap:wrap;
+    justify-content: center;
+  }
+
+  .user-info {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .data-container {
+    width: 350px;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+  }
+
+  .address-container {
+    width: 100%;
+    padding: 5%;
+  }
+
+  .data-input {
+    width: 300px;
+    margin-bottom: 1em
+  }
+
+  .filter-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    max-width: 600px;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+  }
+
+  .form-group {
+    flex-direction: column;
+  }
+
+  .two-inputs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .biglabel {
+    width: auto;
+    text-align: left;
+  }
+
+  table {
+    font-size: 14px;
+    width: 80%;
+  }
+
+  th, td {
+    padding: 4px;
+  }
+
+  .login-container {
+    position:absolute;
+    margin: 0 auto;
+    left: 5px;
+    width: 66vw;
+    margin-top: 20px;
+    min-width: 320px;
+    max-width: 600px;
+    z-index: 99;
+    
+  }
+
+  .login-form {
+    padding: 1rem;
+  }
+
+  .churchName {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align:center;
+    margin-top: 100px;
+  }
+}
+
+

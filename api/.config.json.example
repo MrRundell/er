@@ -1,0 +1,14 @@
+{
+    "servername": "localhost",
+    "port": 3306,
+    "username": "username",
+    "password": "password",
+    "dbname": "electoralroll",
+    "api": "http://localhost",
+    "smtpServer": "smtp.server.com",
+    "smtpPort": 465,
+    "smtpUser": "user@email.com",
+    "smtpPass": "password",
+    "smtpFrom": "User Friendly Name",
+    "smtpFromEmail": "user@email.com"
+}
